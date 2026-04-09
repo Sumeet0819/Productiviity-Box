@@ -13,7 +13,7 @@ const Calender = () => {
         const timer = setInterval(() => {
             setCurrentTime(new Date()); // Update currentTime state to the new exact time
         }, 1000);
-        
+
         // Cleanup function to clear the interval when the component is unmounted
         // This prevents memory leaks natively in React
         return () => clearInterval(timer);
@@ -88,7 +88,7 @@ const Calender = () => {
 
 
     return (
-        <div className="w-full max-w-[320px] min-h-[420px] flex flex-col p-8 bg-white rounded-[2rem] shadow-[0_12px_40px_rgb(0,0,0,0.06)] border border-slate-100 font-sans">
+        <div className="w-full min-w-[320px] min-h-[420px] flex flex-col p-8 bg-white rounded-[2rem] shadow-[0_12px_40px_rgb(0,0,0,0.06)] border border-slate-100 font-sans">
 
             {/* -- Calendar UI: Title and Controls Section -- */}
             <div className="flex w-full items-center mb-6">

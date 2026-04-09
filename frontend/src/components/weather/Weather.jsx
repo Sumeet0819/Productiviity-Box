@@ -82,7 +82,7 @@ const Weather = () => {
 
     return (
         <div
-            className={`w-full max-w-[320px] min-h-[420px] flex flex-col justify-between p-8 bg-white rounded-[2rem] shadow-[0_12px_40px_rgb(0,0,0,0.06)] border border-slate-100 font-sans transition-colors duration-1000`}
+            className={`w-full min-w-[320px] min-h-[420px] flex flex-col justify-between p-8 bg-white rounded-[2rem] shadow-[0_12px_40px_rgb(0,0,0,0.06)] border border-slate-100 font-sans transition-colors duration-1000`}
         >
             {/* Top Section */}
             <div className="flex flex-row justify-between items-start w-full">
