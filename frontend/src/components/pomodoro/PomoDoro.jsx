@@ -37,7 +37,7 @@ const PomoDoro = () => {
     // Maths for the circular SVG progress ring tracking the seconds
     const totalSeconds = WORK_MINUTES * 60;
     const progress = timeLeft / totalSeconds; // Progress slides from 1 down to 0
-    const radius = 90;
+    const radius = 70;
     const circumference = 2 * Math.PI * radius;
     const strokeDashoffset = circumference - progress * circumference;
 
@@ -79,7 +79,7 @@ const PomoDoro = () => {
 
                 {/* Big Time Display nestled perfectly inside the ring */}
                 <div className="absolute flex flex-col items-center justify-center mt-1">
-                    <span className="text-6xl font-light tracking-tight text-slate-800 tabular-nums">
+                    <span className="text-4xl font-light tracking-tight text-slate-800 tabular-nums">
                         {minutes}:{seconds}
                     </span>
                     <span className={`text-[10px] font-bold tracking-[0.2em] uppercase mt-1 transition-colors text-orange-400 ${isActive ? 'animate-pulse' : 'opacity-70'}`}>
@@ -98,11 +98,11 @@ const PomoDoro = () => {
                 </button>
                 <button 
                     onClick={toggleTimer}
-                    className={`flex items-center justify-center w-[68px] h-[68px] rounded-full text-white shadow-lg transition-transform hover:scale-105 active:scale-95 bg-orange-400 hover:bg-orange-500 shadow-orange-400/40`}
+                    className={`flex items-center justify-center w-[48px] h-[48px] rounded-full text-white shadow-lg transition-transform hover:scale-105 active:scale-95 bg-orange-400 hover:bg-orange-500 shadow-orange-400/40`}
                 >
                     {isActive 
-                        ? <Pause size={28} strokeWidth={3} className="fill-current" /> 
-                        : <Play size={28} strokeWidth={3} className="fill-current ml-1" />
+                        ? <Pause size={24} strokeWidth={3} className="fill-current" /> 
+                        : <Play size={24} strokeWidth={3} className="fill-current ml-1" />
                     }
                 </button>
             </div>

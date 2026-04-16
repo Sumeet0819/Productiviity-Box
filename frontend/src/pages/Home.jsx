@@ -3,14 +3,17 @@ import Weather from '../components/weather/Weather'
 import Calender from '../components/calender/Calender'
 import Todo from '../components/todo/Todo'
 import PomoDoro from '../components/pomodoro/PomoDoro'
+import SideBar from '../components/sidebar/SideBar'
 
 const Home = () => {
     return (
         <div className='grid grid-cols-5 gap-2 p-4 h-screen'>
-            <div className='col-span-1 grid grid-rows-2 gap-5 p-2'>
+             <div className='col-span-1 grid grid-rows-2 gap-5 p-2'>
                 <div className='rounded-2xl'>
-                    <Calender />
+                    <SideBar />
                 </div>
+            </div>
+            <div className='col-span-1 grid grid-rows-2 gap-5 p-2'>
                 <div className='rounded-2xl'>
                     <Weather />
                 </div>
