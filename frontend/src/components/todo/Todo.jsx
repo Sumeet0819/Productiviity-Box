@@ -25,8 +25,8 @@ const Todo = () => {
     const progress = tasks.length === 0 ? 0 : Math.round((completedCount / tasks.length) * 100);
 
     return (
-        <div className="w-full min-h-[520px] rounded-[2rem] bg-[var(--surface-container-lowest)] p-8 shadow-[var(--shadow-focus)]">
-            <div className="flex items-start justify-between gap-4 mb-8">
+        <div className="flex flex-col w-full h-full rounded-[2rem] bg-[var(--surface-container-lowest)] p-6 shadow-[var(--shadow-focus)]">
+            <div className="flex items-start justify-between gap-4 mb-5">
                 <div className="flex items-center gap-3">
                     <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[rgba(0,106,60,0.12)] text-[var(--primary)]">
                         <ListTodo size={20} strokeWidth={2.5} />
@@ -41,7 +41,7 @@ const Todo = () => {
                 </div>
             </div>
 
-            <div className="grid gap-3 mb-8">
+            <div className="grid gap-3 mb-5">
                 <div className="h-2 overflow-hidden rounded-full bg-[var(--surface-container-low)]">
                     <div className="h-full rounded-full bg-[var(--primary)] transition-all duration-500" style={{ width: `${progress}%` }} />
                 </div>
@@ -51,9 +51,9 @@ const Todo = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-3 mb-8 max-h-[260px] overflow-y-auto pr-1">
+            <div className="flex-1 flex flex-col gap-2.5 mb-5 overflow-y-auto pr-1">
                 {tasks.length === 0 ? (
-                    <div className="rounded-[1.5rem] bg-[var(--surface-container-low)] p-8 text-center text-sm font-medium text-[var(--on-surface-variant)]">
+                    <div className="rounded-[1.5rem] bg-[var(--surface-container-low)] p-6 text-center text-sm font-medium text-[var(--on-surface-variant)]">
                         All caught up! 🎉
                     </div>
                 ) : (
@@ -61,11 +61,10 @@ const Todo = () => {
                         <div
                             key={task.id}
                             onClick={() => toggleTask(task.id)}
-                            className={`group flex items-center justify-between gap-4 rounded-[1.75rem] p-4 transition-all ${
-                                task.completed
-                                    ? 'bg-[var(--surface-container-low)] text-[var(--on-surface-variant)]'
-                                    : 'bg-[var(--surface)] hover:bg-[var(--surface-container-low)]'
-                            }`}
+                            className={`group flex items-center justify-between gap-4 rounded-[1.5rem] p-3 transition-all ${task.completed
+                                ? 'bg-[var(--surface-container-low)] text-[var(--on-surface-variant)]'
+                                : 'bg-[var(--surface)] hover:bg-[var(--surface-container-low)]'
+                                }`}
                         >
                             <div className="flex items-center gap-3">
                                 {task.completed ? (
@@ -91,7 +90,7 @@ const Todo = () => {
                 )}
             </div>
 
-            <form onSubmit={addTask} className="relative">
+            <form onSubmit={addTask} className="relative mt-auto">
                 <input
                     type="text"
                     value={newTaskText}

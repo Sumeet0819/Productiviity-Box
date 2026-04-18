@@ -27,18 +27,17 @@ const Calender = () => {
         const days = [];
 
         for (let i = 0; i < firstDayOfMonth; i++) {
-            days.push(<div key={`empty-${i}`} className="w-9 h-9" />);
+            days.push(<div key={`empty-${i}`} className="w-10 h-10" />);
         }
 
         for (let day = 1; day <= daysInMonth; day++) {
             const isToday = isRealTimeToday(day);
             days.push(
-                <div key={day} className="relative flex items-center justify-center w-9 h-9">
-                    <div className={`w-8 h-8 flex items-center justify-center rounded-full transition-all ${
-                        isToday
-                            ? 'bg-[var(--primary)] text-white shadow-[0_0_0_8px_rgba(0,106,60,0.08)]'
-                            : 'bg-[var(--surface-container-low)] text-[var(--on-surface-variant)] hover:bg-[var(--surface-container-lowest)]'
-                    }`}>
+                <div key={day} className="relative flex items-center justify-center w-10 h-10">
+                    <div className={`w-9 h-9 flex items-center justify-center rounded-full transition-all ${isToday
+                        ? 'bg-[var(--primary)] text-white shadow-[0_0_0_8px_rgba(0,106,60,0.08)]'
+                        : 'bg-[var(--surface-container-low)] text-[var(--on-surface-variant)] hover:bg-[var(--surface-container-lowest)]'
+                        }`}>
                         <span className="text-[13px] font-semibold">{day}</span>
                     </div>
                 </div>
@@ -49,7 +48,7 @@ const Calender = () => {
     };
 
     return (
-        <div className="w-full min-h-[420px] rounded-[2rem] bg-[var(--surface-container-lowest)] p-7 shadow-[var(--shadow-focus)]">
+        <div className="w-full h-full rounded-[2rem] bg-[var(--surface-container-lowest)] p-7 shadow-[var(--shadow-focus)]">
             <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                     <div>
@@ -68,7 +67,7 @@ const Calender = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-7 gap-y-2 gap-x-1.5 place-items-center mt-3">
+                <div className="grid grid-cols-7 gap-y-2 gap-x-1.5 place-items-center mt-7">
                     {renderCalendarDays()}
                 </div>
             </div>
